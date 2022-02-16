@@ -5,9 +5,11 @@
  */
 package ardi;
 
+import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Set;
 import java.util.function.Predicate;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 /**
@@ -41,6 +43,7 @@ public class MapExample {
         System.out.println("Print total sold of Fahruddin Faiz's books without Stream");
         int totalSellFaizBooks = 0;
         
+        //Loop through data(map).values -> Book object
         for(Book b: data.values()) {
             if(b.getAuthor().equalsIgnoreCase("fahruddin faiz")) {
                 totalSellFaizBooks += (int) b.getTotalSell();
@@ -48,5 +51,15 @@ public class MapExample {
         }
         
         System.out.println("Sold: " + totalSellFaizBooks + " books\n");
+        
+        //Sorting using Stream
+        Map<Integer, Book> sortedData = data.entrySet()
+                .stream()
+                .sorted(Map.Entry.comparingByKey())
+                .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue,
+                        (oldValue, newValue) -> oldValue, LinkedHashMap::new));
+        
+        System.out.println("Sorted data...");
+        System.out.println(sortedData);
     }
 }
