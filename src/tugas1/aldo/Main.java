@@ -3,10 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package aldo;
-import aldo.ReduceExample;
-import aldo.MatchExample;
-import aldo.OptionalExample;
+package tugas1.aldo;
+import tugas1.aldo.ReduceExample;
+import tugas1.aldo.MatchExample;
+import tugas1.aldo.OptionalExample;
 
 /**
  *

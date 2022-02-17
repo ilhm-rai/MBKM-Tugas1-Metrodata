@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ardi;
+package tugas1.ardi;
 
 import java.util.LinkedHashMap;
 import java.util.Map;
